@@ -1,0 +1,16 @@
+{
+  "lang": {
+    "tr": "Türkçe",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "widgets": {
+    "searchBar": {
+      "to": "Nereden",
+      "from": "Nereye",
+      "startDate": "Gidiş Tarihi",
+      "endDate": "Dönüş Tarihi",
+      "travellerCount": "Yolcu Sayısı"
+    }
+  }
+}

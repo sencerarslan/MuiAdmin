@@ -1,0 +1,16 @@
+{
+  "lang": {
+    "tr": "Türkçe",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "widgets": {
+    "searchBar": {
+      "to": "To",
+      "from": "From",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "travellerCount": "Traveller Count"
+    }
+  }
+}
