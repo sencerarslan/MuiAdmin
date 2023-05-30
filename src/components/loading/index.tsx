@@ -6,7 +6,11 @@ import React from "react";
 const WrappedLoading = () => {
   return (
     <LoadingStyled>
-      <CircularProgress color="primary" size={50} />
+      <div className="content">
+        <div className="loading">
+          <CircularProgress color="primary" size={50} />
+        </div>
+      </div>
     </LoadingStyled>
   );
 };

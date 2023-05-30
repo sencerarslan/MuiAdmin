@@ -1,7 +1,6 @@
 import {
   AppBar,
   Toolbar,
-  Container,
   IconButton,
   Grid,
   Dialog,
@@ -44,67 +43,69 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Grid
-            container
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center">
-            <div>HEADER</div>
+    <AppBar
+      position="sticky"
+      color="default"
+      sx={{ pl: 3, pr: 3, boxShadow: "none", bgcolor: "background.paper" }}
+      variant="outlined">
+      <Toolbar disableGutters>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center">
+          <div>HEADER</div>
 
-            <div>
-              <IconButton
-                sx={{ ml: 1 }}
-                onClick={() => {
-                  const th = currentTheme === "light" ? "dark" : "light";
-                  dispatch(setTheme(th));
-                }}
-                color="inherit">
-                {currentTheme === "dark" ? <Brightness7 /> : <Brightness4 />}
-              </IconButton>
+          <div>
+            <IconButton
+              sx={{ ml: 1 }}
+              onClick={() => {
+                const th = currentTheme === "light" ? "dark" : "light";
+                dispatch(setTheme(th));
+              }}
+              color="inherit">
+              {currentTheme === "dark" ? <Brightness7 /> : <Brightness4 />}
+            </IconButton>
 
-              <IconButton
-                sx={{ ml: 1 }}
-                color="inherit"
-                onClick={() => {
-                  setOpenLang(true);
-                }}>
-                <Public />
-              </IconButton>
+            <IconButton
+              sx={{ ml: 1 }}
+              color="inherit"
+              onClick={() => {
+                setOpenLang(true);
+              }}>
+              <Public />
+            </IconButton>
 
-              <Dialog onClose={() => handleClose()} open={opanLang}>
-                <DialogTitle>Tercih ettiğiniz dili seçiniz.</DialogTitle>
+            <Dialog onClose={() => handleClose()} open={opanLang}>
+              <DialogTitle>Tercih ettiğiniz dili seçiniz.</DialogTitle>
 
-                <List sx={{ pt: 0 }}>
-                  {languages.map((item: any, index: number) => (
-                    <ListItem disableGutters key={index}>
-                      <ListItemButton
-                        selected={currentLanguage === item}
-                        onClick={() => handleClose(item)}
-                        key={item}
-                        color="inherit">
-                        <ListItemAvatar sx={{ ml: 1, mr: 2, minWidth: 0 }}>
-                          <Icon color="action">
-                            <img
-                              src={`/assets/images/flags/${item}.svg`}
-                              alt={item}
-                              width={"100%"}
-                              height={"100%"}
-                            />
-                          </Icon>
-                        </ListItemAvatar>
-                        <ListItemText primary={t(`lang.${item}`)} />
-                      </ListItemButton>
-                    </ListItem>
-                  ))}
-                </List>
-              </Dialog>
-            </div>
-          </Grid>
-        </Toolbar>
-      </Container>
+              <List sx={{ pt: 0 }}>
+                {languages.map((item: any, index: number) => (
+                  <ListItem disableGutters key={index}>
+                    <ListItemButton
+                      selected={currentLanguage === item}
+                      onClick={() => handleClose(item)}
+                      key={item}
+                      color="inherit">
+                      <ListItemAvatar sx={{ ml: 1, mr: 2, minWidth: 0 }}>
+                        <Icon color="action">
+                          <img
+                            src={`/assets/images/flags/${item}.svg`}
+                            alt={item}
+                            width={"100%"}
+                            height={"100%"}
+                          />
+                        </Icon>
+                      </ListItemAvatar>
+                      <ListItemText primary={t(`lang.${item}`)} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Dialog>
+          </div>
+        </Grid>
+      </Toolbar>
     </AppBar>
   );
 }

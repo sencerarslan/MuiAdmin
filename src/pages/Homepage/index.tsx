@@ -1,94 +1,90 @@
-import {
-  Autocomplete,
-  Grid,
-  InputAdornment,
-  autocompleteClasses,
-} from "@mui/material";
-import { CustomInput, CustomDatePicker } from "../../components/Input";
+import { Grid, Paper, Skeleton, Stack } from "@mui/material";
 import { HomePageStyled } from "./index.styles";
-import { FlightTakeoff, FlightLand, PersonAdd } from "@mui/icons-material";
-import { useTranslation } from "react-i18next";
 
 export interface HomePageProps {}
 
 const HomePage = () => {
-  const data2 = [
-    { label: "İzmir" },
-    { label: "İstanbul" },
-    { label: "Ankara" },
-  ];
-  const { t } = useTranslation();
-
   return (
     <HomePageStyled>
       <>
-        <Grid container>
-          <Grid p={2}>
-            <Autocomplete
-              popupIcon={
-                <InputAdornment position="end">
-                  <FlightTakeoff fontSize="small" />
-                </InputAdornment>
-              }
-              options={data2}
-              sx={{
-                width: 156,
-                [`& .${autocompleteClasses.popupIndicator}`]: {
-                  transform: "none",
-                },
-              }}
-              renderInput={(params) => (
-                <CustomInput
-                  {...params}
-                  label={t("widgets.searchBar.to")}
-                  size="small"
+        <Grid container spacing={3}>
+          <Grid item sm>
+            <Paper sx={{ p: 3 }} variant="outlined">
+              <Stack spacing={1}>
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="circular" width={40} height={40} />
+                <Skeleton variant="rectangular" width={210} height={60} />
+                <Skeleton variant="rounded" width={210} height={60} />
+              </Stack>
+            </Paper>
+          </Grid>
+          <Grid item sm={8}>
+            <Paper sx={{ p: 3 }} variant="outlined">
+              <Stack spacing={1}>
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="circular" width={40} height={40} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton
+                  variant="text"
+                  width={210}
+                  sx={{ fontSize: "1rem" }}
                 />
-              )}
-            />
+              </Stack>
+            </Paper>
           </Grid>
-          <Grid p={2}>
-            <Autocomplete
-              popupIcon={
-                <InputAdornment position="end">
-                  <FlightLand fontSize="small" />
-                </InputAdornment>
-              }
-              options={data2}
-              sx={{
-                width: 156,
-                [`& .${autocompleteClasses.popupIndicator}`]: {
-                  transform: "none",
-                },
-              }}
-              renderInput={(params) => (
-                <CustomInput
-                  {...params}
-                  label={t("widgets.searchBar.from")}
-                  size="small"
+          <Grid item sm>
+            <Paper sx={{ p: 3 }} variant="outlined">
+              <Stack spacing={1}>
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="circular" width={40} height={40} />
+                <Skeleton variant="rectangular" width={210} height={60} />
+                <Skeleton variant="rounded" width={210} height={60} />
+              </Stack>
+            </Paper>
+          </Grid>
+          <Grid item sm={8}>
+            <Paper sx={{ p: 3 }} variant="outlined">
+              <Stack spacing={1}>
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="circular" width={40} height={40} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton
+                  variant="text"
+                  width={210}
+                  sx={{ fontSize: "1rem" }}
                 />
-              )}
-            />
+              </Stack>
+            </Paper>
           </Grid>
-          <Grid p={2}>
-            <CustomDatePicker label={t("widgets.searchBar.startDate")} />
+          <Grid item sm>
+            <Paper sx={{ p: 3 }} variant="outlined">
+              <Stack spacing={1}>
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="circular" width={40} height={40} />
+                <Skeleton variant="rectangular" width={210} height={60} />
+                <Skeleton variant="rounded" width={210} height={60} />
+              </Stack>
+            </Paper>
           </Grid>
-          <Grid p={2}>
-            <CustomDatePicker label={t("widgets.searchBar.endDate")} />
-          </Grid>
-          <Grid p={2}>
-            <CustomInput
-              type="number"
-              style={{ maxWidth: "156px" }}
-              size="small"
-              label={t("widgets.searchBar.travellerCount")}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <PersonAdd fontSize="small" />
-                  </InputAdornment>
-                ),
-              }}
-            />
+          <Grid item sm={8}>
+            <Paper sx={{ p: 3 }} variant="outlined">
+              <Stack spacing={1}>
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="circular" width={40} height={40} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
+                <Skeleton
+                  variant="text"
+                  width={210}
+                  sx={{ fontSize: "1rem" }}
+                />
+              </Stack>
+            </Paper>
           </Grid>
         </Grid>
       </>
